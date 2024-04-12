@@ -1,4 +1,6 @@
-﻿namespace Dweb_Projeto.Models{
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Dweb_Projeto.Models{
     public class Utilizador{
 
         public Utilizador(){
@@ -7,6 +9,7 @@
             ListaPublicacoes = new HashSet<Publicacao>();
         }
 
+        [Key] // PK
         public int userID { get; set; }
 
         public string nome { get; set; }

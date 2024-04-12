@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dweb_Projeto.Models{
     public class Publicacao{
@@ -9,6 +10,7 @@ namespace Dweb_Projeto.Models{
             ListaLikes = new HashSet<Likes>();
         }
 
+        [Key] //PK
         public int postId { get; set; }
 
         public string titulo { get; set; }

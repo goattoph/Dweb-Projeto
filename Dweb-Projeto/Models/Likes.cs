@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dweb_Projeto.Models{
     public class Likes{
 
+        [Key] // PK
         public int likeID { get; set; }
 
         /* ****************************************

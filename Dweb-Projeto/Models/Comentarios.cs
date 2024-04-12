@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dweb_Projeto.Models{
-    public class Likes{
+    public class Comentarios{
 
-        public int likeID { get; set; }
+        public int commentId { get; set; }
+
+        public string texto { get; set; }
 
         /* ****************************************
          * Construção dos Relacionamentos
@@ -17,7 +19,7 @@ namespace Dweb_Projeto.Models{
         [ForeignKey(nameof(Utilizador))]
 
         public int UtilizadorFK { get; set; } // FK para o Utilizador
-
+       
         public Utilizador Utilizador { get; set; } // FK para o Utilizador
 
         // esta anotação informa a EF
@@ -27,5 +29,7 @@ namespace Dweb_Projeto.Models{
         public int PublicacaoFK { get; set; } // FK para a Publicação
 
         public Publicacao Publicacao { get; set; } // FK para a Publicação
+
+
     }
 }

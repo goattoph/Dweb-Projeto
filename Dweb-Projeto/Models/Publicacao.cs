@@ -13,11 +13,22 @@ namespace Dweb_Projeto.Models{
         [Key] //PK
         public int PostId { get; set; }
 
+        [Display(Name = "Título")]
+        [Required(ErrorMessage ="O {0} é de preenchimento obrigatório!")]
+        [StringLength(50, ErrorMessage = "O {0} não pode ter mais de {1} caracteres.")]
         public string Titulo { get; set; }
 
+        [Display(Name = "Descrição")]
+        [StringLength(200, ErrorMessage = "A {0} não pode ter mais de {1} caracteres.")]
         public string Descricao { get; set; }
 
+        [Display(Name = "Foto")]
+        [Required(ErrorMessage = "A {0} é de preenchimento obrigatório!")]
+        [StringLength(50)]
         public string Foto { get; set; }
+
+        [Display(Name = "Data da Publicação")]
+        public DateTime DataPublicacao { get; set; }
 
         // relacionamento 1-N
 

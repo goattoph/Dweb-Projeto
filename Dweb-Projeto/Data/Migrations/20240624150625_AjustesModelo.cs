@@ -183,7 +183,7 @@ namespace Dweb_Projeto.Data.Migrations
                 column: "UtilizadorFK",
                 principalTable: "Utilizador",
                 principalColumn: "UserID",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
         }
 
         /// <inheritdoc />

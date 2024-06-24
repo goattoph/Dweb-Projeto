@@ -5,28 +5,28 @@ namespace Dweb_Projeto.Models{
     public class Publicacao{
 
         public Publicacao() {
-            ListaUtilizadores = new HashSet<Utilizador>();
+            ListaCategorias = new HashSet<Categoria>();
             ListaComentarios = new HashSet<Comentarios>();
             ListaLikes = new HashSet<Likes>();
         }
 
         [Key] //PK
-        public int postId { get; set; }
+        public int PostId { get; set; }
 
-        public string titulo { get; set; }
+        public string Titulo { get; set; }
 
-        public string descricao { get; set; }
+        public string Descricao { get; set; }
 
-        public string foto { get; set; }
+        public string Foto { get; set; }
 
         // relacionamento 1-N
 
         // esta anotação informa a EF
-        // que o atributo 'CategoriaFK' é uma FK em conjunto
-        // com o atributo 'Categoria'
-        [ForeignKey(nameof(Categoria))]
-        public int CategoriaFK { get; set; } // FK para a Categoria
-        public Categoria Categoria { get; set; } // FK para a Categoria
+        // que o atributo 'UtilizadorFK' é uma FK em conjunto
+        // com o atributo 'Utilizador'
+        [ForeignKey(nameof(Utilizador))]
+        public int UtilizadorFK { get; set; } // FK para o Utilizador
+        public Utilizador Utilizador { get; set; } // FK para o Utilizador
 
         //Lista dos Comentarios que uma Publicação tem
         public ICollection<Comentarios> ListaComentarios { get; set; }
@@ -35,6 +35,6 @@ namespace Dweb_Projeto.Models{
         public ICollection<Likes> ListaLikes { get; set; }
 
         // relacionamento M-N, SEM atributos no relacionamento
-        public ICollection<Utilizador> ListaUtilizadores { get; set; }
+        public ICollection<Categoria> ListaCategorias { get; set; }
     }
 }

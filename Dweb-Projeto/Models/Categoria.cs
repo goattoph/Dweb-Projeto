@@ -8,15 +8,15 @@ namespace Dweb_Projeto.Models{
         }
 
         [Key] // PK
-        public int categoriaId { get; set; }
+        public int CategoriaId { get; set; }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
         /* ****************************************
          * Construção dos Relacionamentos
          * *************************************** */
 
-        // relacionamento 1-N
+        // relacionamento N-M, SEM atributos no relacionamento
 
         // Lista das Publicações que uma Categoria tem
         public ICollection<Publicacao> ListaPublicacoes { get; set; }

@@ -10,15 +10,15 @@ namespace Dweb_Projeto.Models{
         }
 
         [Key] // PK
-        public int userID { get; set; }
+        public int UserID { get; set; }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
-        public string email { get; set;}
+        public string Foto { get; set;}
 
-        public string password { get; set;}
+        public DateOnly DataNascimento { get; set; }
 
-        public string foto { get; set;}
+        public string Telefone { get; set; }
 
         /* ****************************************
          * Construção dos Relacionamentos
@@ -29,11 +29,10 @@ namespace Dweb_Projeto.Models{
         // Lista dos Comentarios que um Utilizador tem
         public ICollection<Comentarios> ListaComentarios { get; set;}
 
-        // Lista dos Comentarios que um Utilizador tem
+        // Lista dos Likes que um Utilizador tem
         public ICollection<Likes> ListaLikes { get; set;}
 
-        // relacionamento M-N, SEM atributos no relacionamento
-
+        // Lista das Publicações que um Utilizador tem
         public ICollection<Publicacao> ListaPublicacoes { get; set;}
 
     }

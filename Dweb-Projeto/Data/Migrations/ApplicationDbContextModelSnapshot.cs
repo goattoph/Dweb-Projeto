@@ -46,6 +46,7 @@ namespace Dweb_Projeto.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoriaId"));
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoriaId");
@@ -64,10 +65,11 @@ namespace Dweb_Projeto.Data.Migrations
                     b.Property<int>("PublicacaoFK")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PublicacaoPostId")
+                    b.Property<int>("PublicacaoPostId")
                         .HasColumnType("int");
 
                     b.Property<string>("Texto")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UtilizadorFK")
@@ -93,7 +95,7 @@ namespace Dweb_Projeto.Data.Migrations
                     b.Property<int>("PublicacaoFK")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PublicacaoPostId")
+                    b.Property<int>("PublicacaoPostId")
                         .HasColumnType("int");
 
                     b.Property<int>("UtilizadorFK")
@@ -120,6 +122,7 @@ namespace Dweb_Projeto.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -155,12 +158,15 @@ namespace Dweb_Projeto.Data.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("Foto")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telemovel")
+                    b.Property<string>("Telefone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserID");
@@ -389,7 +395,9 @@ namespace Dweb_Projeto.Data.Migrations
                 {
                     b.HasOne("Dweb_Projeto.Models.Publicacao", "Publicacao")
                         .WithMany("ListaComentarios")
-                        .HasForeignKey("PublicacaoPostId");
+                        .HasForeignKey("PublicacaoPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Dweb_Projeto.Models.Utilizador", "Utilizador")
                         .WithMany("ListaComentarios")
@@ -406,7 +414,9 @@ namespace Dweb_Projeto.Data.Migrations
                 {
                     b.HasOne("Dweb_Projeto.Models.Publicacao", "Publicacao")
                         .WithMany("ListaLikes")
-                        .HasForeignKey("PublicacaoPostId");
+                        .HasForeignKey("PublicacaoPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Dweb_Projeto.Models.Utilizador", "Utilizador")
                         .WithMany("ListaLikes")

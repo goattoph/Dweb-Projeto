@@ -16,12 +16,9 @@ namespace Dweb_Projeto.Models{
 
         public string Foto { get; set;}
 
-        [Display(Name = "Data de Nascimento")]
         public DateOnly DataNascimento { get; set; }
 
-        [Display(Name = "Telemóvel")]
-        public string Telemovel { get; set; }
-
+        public string Telefone { get; set; }
 
         /* ****************************************
          * Construção dos Relacionamentos

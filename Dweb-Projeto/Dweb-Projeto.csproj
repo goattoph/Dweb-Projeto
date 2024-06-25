@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Dweb_Projeto-e31823c5-82da-4362-9989-3d5b298fde2f</UserSecretsId>
     <RootNamespace>Dweb_Projeto</RootNamespace>

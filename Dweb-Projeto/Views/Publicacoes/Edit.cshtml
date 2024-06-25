@@ -1,12 +1,11 @@
 ﻿@model Dweb_Projeto.Models.Publicacao
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Edit</h1>
+<h1>Editar publicação</h1>
 
-<h4>Publicacao</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -33,15 +32,16 @@
                 <select asp-for="UtilizadorFK" class="form-control" asp-items="ViewBag.UtilizadorFK"></select>
                 <span asp-validation-for="UtilizadorFK" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar alterações" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à listagem de publicações</a>
 </div>
 
 @section Scripts {

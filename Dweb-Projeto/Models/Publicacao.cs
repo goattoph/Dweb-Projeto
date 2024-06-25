@@ -28,6 +28,8 @@ namespace Dweb_Projeto.Models{
         public string Foto { get; set; }
 
         [Display(Name = "Data da Publicação")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime DataPublicacao { get; set; }
 
         // relacionamento 1-N

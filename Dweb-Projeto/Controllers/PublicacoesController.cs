@@ -104,7 +104,7 @@ namespace Dweb_Projeto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostId,Titulo,Descricao,Foto")] Publicacao publicacao, IFormFile FotoPublicacao){
+        public async Task<IActionResult> Edit(int id, [Bind("PostId,Titulo,Descricao,Foto,UtilizadorFK")] Publicacao publicacao, IFormFile FotoPublicacao){
     // a anotação [Bind] informa o servidor de quais atributos
     // que devem ser lidos do objeto que vem do browser
 

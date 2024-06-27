@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Dweb_Projeto.Models.Comentarios>
+
+@{
+    ViewData["Title"] = "Comentarios";
+}
+
+<h1>Comentários</h1>
+
+<p>
+    <a asp-action="Create">Adicionar um novo comentário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Texto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilizador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publicacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Texto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilizador.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publicacao.Foto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CommentId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CommentId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.CommentId">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

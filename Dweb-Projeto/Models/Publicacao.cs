@@ -23,9 +23,8 @@ namespace Dweb_Projeto.Models{
         public string Descricao { get; set; }
 
         [Display(Name = "Foto")]
-        [Required(ErrorMessage = "A {0} é de preenchimento obrigatório!")]
         [StringLength(50)]
-        public string Foto { get; set; }
+        public string? Foto { get; set; }
 
         [Display(Name = "Data da Publicação")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -38,8 +37,11 @@ namespace Dweb_Projeto.Models{
         // que o atributo 'UtilizadorFK' é uma FK em conjunto
         // com o atributo 'Utilizador'
         [ForeignKey(nameof(Utilizador))]
-        public int UtilizadorFK { get; set; } // FK para o Utilizador
-        public Utilizador Utilizador { get; set; } // FK para o Utilizador
+        public int? UtilizadorFK { get; set; } // FK para o Utilizador
+        /// <summary>
+        /// Utilizador associado à publicação
+        /// </summary>
+        public Utilizador? Utilizador { get; set; } // FK para o Utilizador
 
         //Lista dos Comentarios que uma Publicação tem
         public ICollection<Comentarios> ListaComentarios { get; set; }

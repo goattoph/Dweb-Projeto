@@ -61,7 +61,7 @@ namespace Dweb_Projeto.Controllers
         // GET: Publicacoes/Create
         public IActionResult Create()
         {
-            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador, "UserID", "UserID");
+            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador.OrderBy(c => c.Nome), "UserID", "Nome");
             return View();
         }
 
@@ -78,7 +78,7 @@ namespace Dweb_Projeto.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador, "UserID", "UserID", publicacao.UtilizadorFK);
+            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador, "UserID", "Nome", publicacao.UtilizadorFK);
             return View(publicacao);
         }
 
@@ -95,7 +95,7 @@ namespace Dweb_Projeto.Controllers
             {
                 return NotFound();
             }
-            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador, "UserID", "UserID", publicacao.UtilizadorFK);
+            ViewData["UtilizadorFK"] = new SelectList(_context.Utilizador, "UserID", "Nome", publicacao.UtilizadorFK);
             return View(publicacao);
         }
 

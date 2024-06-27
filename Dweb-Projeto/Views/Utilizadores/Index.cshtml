@@ -34,7 +34,13 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
+                @*
                 @Html.DisplayFor(modelItem => item.Foto)
+                *@
+                    <img src="~/Imagens/@item.Foto"
+                         alt="logótipo do curso @item.Nome"
+                         title="@item.Nome"
+                         width="75px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataNascimento)

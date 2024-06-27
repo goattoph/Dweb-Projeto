@@ -15,6 +15,9 @@ namespace Dweb_Projeto.Models{
         /// <summary>
         /// texto do comentário
         /// </summary>
+        [Required(ErrorMessage = "O texto do comentário é obrigatório")]
+        [StringLength(500, ErrorMessage = "O texto do comentário não pode ter mais de 500 caracteres")]
+        [Display(Name = "Texto do Comentário")]
         public string Texto { get; set; }
 
         /* ****************************************
